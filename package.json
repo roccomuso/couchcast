@@ -1,0 +1,61 @@
+{
+  "name": "couchcast",
+  "version": "0.1.0",
+  "description": "Run one command in any folder to stream its videos to VLC and smart TVs over your LAN. Zero-config DLNA media server for Node.js.",
+  "keywords": [
+    "dlna",
+    "upnp",
+    "media-server",
+    "ssdp",
+    "vlc",
+    "smart-tv",
+    "streaming",
+    "cli",
+    "nodejs",
+    "ink"
+  ],
+  "homepage": "https://github.com/roccomuso/couchcast#readme",
+  "bugs": "https://github.com/roccomuso/couchcast/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roccomuso/couchcast.git"
+  },
+  "license": "MIT",
+  "author": "Rocco Musolino",
+  "type": "module",
+  "exports": {
+    ".": "./src/server.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "couchcast": "bin/couchcast.js"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "node bin/couchcast.js",
+    "test": "node --test \"test/**/*.test.js\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc -p jsconfig.json",
+    "check": "npm run lint && npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.11.2",
+    "htm": "^3.1.1",
+    "ink": "^8.0.0",
+    "react": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "eslint": "^9.39.5",
+    "neostandard": "^0.14.1",
+    "typescript": "^6.0.3"
+  }
+}
